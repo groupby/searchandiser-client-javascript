@@ -1,0 +1,30 @@
+{
+  "name": "searchandiser-client-javascript",
+  "version": "0.0.0-development",
+  "description": "javascript client for the GroupBy Searchandiser API",
+  "main": "index.js",
+  "repository": "https://github.com/groupby/searchandiser-client-javascript",
+  "author": "Ben Teichman",
+  "scripts": {
+    "start": "start-runner -f tasks.js",
+    "prepush": "yarn start prepush",
+    "prepublish": "yarn start build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "verifyConditions": "condition-circle"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-start": "^0.1.0",
+    "condition-circle": "^1.5.0",
+    "husky": "^0.13.0",
+    "semantic-release": "^6.3.2",
+    "semistandard": "^9.2.1",
+    "start": "^5.1.0",
+    "start-babel-cli": "^4.0.1",
+    "start-release": "^1.2.0",
+    "start-start-preset": "^3.0.1"
+  },
+  "dependencies": {}
+}
