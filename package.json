@@ -20,6 +20,12 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "restart": {
+      "scratchTestFiles": [
+        ".scratch/test/bootstrap.js",
+        ".scratch/test/**/*.js"
+      ]
     }
   },
   "license": "MIT",
@@ -31,7 +37,7 @@
     "cz-conventional-changelog": "^1.2.0",
     "husky": "^0.13.0",
     "mocha": "^3.2.0",
-    "re-start": "^1.8.1",
+    "re-start": "^1.8.2",
     "start-simple-cli": "^4.1.1",
     "tslint-config-groupby": "^1.0.0"
   },
