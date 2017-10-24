@@ -1,6 +1,8 @@
-import { theon } from 'groupby-client-core';
+import { theon, CUSTOMERID_TOKEN } from 'groupby-client-core';
 import Refinements from './refinements';
 import Search from './search';
+
+const CORS = 'cors';
 
 namespace Cors {
   export interface Constructor {
@@ -26,4 +28,8 @@ function corsConstructor(this: theon.Request, https?: boolean) {
   if (https) {
     this.getRoot().getStore().set('https', true);
   }
+  this.getRoot().ctx.opts.rootUrl = this.getRoot().ctx.opts.rootUrl
+    .replace(CUSTOMERID_TOKEN, `${CUSTOMERID_TOKEN}-${CORS}`);
+  // this.getRoot().ctx.opts.rootUrl = this.getRoot().ctx.opts.rootUrl
+  //   .replace(/:\/\/(\S*?).groupbycloud\.com/, `://$1-${CORS}.groupbycloud.com`);
 }
